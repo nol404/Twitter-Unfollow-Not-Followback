@@ -15,7 +15,7 @@ const scrollDown = async () => {
 
 const twitterUnfollowAllWithoutMutualSubscription = async () => {
     const FOLLOWS_TEXT_EN = 'Follows you';
-    const FOLLOWS_TEXT_RU = 'Читает вас';
+    const FOLLOWS_TEXT_ID = 'Mengikuti Anda';
     const unfollowButtons = document.querySelectorAll('[role="button"][data-testid*="unfollow"]');
 
     if (!unfollowButtons.length) {
@@ -29,7 +29,7 @@ const twitterUnfollowAllWithoutMutualSubscription = async () => {
 
         const nicknameIndex = Array.from(spans).findIndex(span => span.innerText.match('@'));
         const followsMeSpanIndex = Array.from(spans).findIndex(
-            span => span.innerText === FOLLOWS_TEXT_EN || span.innerText === FOLLOWS_TEXT_RU
+            span => span.innerText === FOLLOWS_TEXT_EN || span.innerText === FOLLOWS_TEXT_ID
         );
 
         if (!nicknameIndex && !followsMeSpanIndex) continue;
